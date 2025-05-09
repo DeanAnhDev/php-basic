@@ -8,7 +8,8 @@ Khái niệm: Công nghệ web là một thuật ngữ chung đề cập đến 
 Khái niệm: HTML5 là phiên bản mới (chuẩn mới) của HTML (Hypertext Markup Language) để trình bày trang web.
 Trang HTML5 mặc định giải mã ký tự theo UTF-8
 #### Một số cải tiến:
-Các phần tử mới: <footer>,<header>, ...
+Các phần tử mới: 
+footer,header, ...
 Cải tiến Form: hỗ trợ kiểu input mới, các phương thức put và delete. Tạo các Form mạnh mẽ hơn.
 Có các yếu tố đồ họa mới bao gồm đồ họa vector và tags.
 Cho phép vẽ nhiều hình dạng khác nhau như hình tam giác, hình chữ nhật, hình tròn, v.v.
