@@ -1,24 +1,24 @@
 # php-basic
 
-Introduction to web Technology (Công nghệ Web)
+## Introduction to web Technology (Công nghệ Web)
 Khái niệm: Công nghệ web là một thuật ngữ chung đề cập đến nhiều ngôn ngữ và gói đa phương tiện được sử dụng kết hợp với nhau, để tạo ra các trang web. Mỗi công nghệ có chức năng riêng biệt và cần yêu cầu sử dụng kép ít nhất thêm một công nghệ khác.
 
-Introduction to HTML5 and CSS
-HTML5
+## Introduction to HTML5 and CSS
+### HTML5
 Khái niệm: HTML5 là phiên bản mới (chuẩn mới) của HTML (Hypertext Markup Language) để trình bày trang web.
 Trang HTML5 mặc định giải mã ký tự theo UTF-8
-Một số cải tiến:
+#### Một số cải tiến:
 Các phần tử mới: <footer>,<header>, ...
 Cải tiến Form: hỗ trợ kiểu input mới, các phương thức put và delete. Tạo các Form mạnh mẽ hơn.
 Có các yếu tố đồ họa mới bao gồm đồ họa vector và tags.
 Cho phép vẽ nhiều hình dạng khác nhau như hình tam giác, hình chữ nhật, hình tròn, v.v.
 ...
-Thuận lợi:
+#### Thuận lợi:
 Hỗ trợ nhiều trình duyệt hơn.
 Thân thiện với nhiều thiết bị.
 Dễ sử dụng và thực hiện hơn.
 Tích hợp với CSS và JS, v.v. có thể xây dựng các trang web tốt hơn.
-CSS
+### CSS
 Khái niệm: CSS là một ngôn ngữ chuyên dùng để trình bày hình thức thể hiện của văn bản HTML cho người dùng, như văn bản đó được định dạng ra sao (cơ chữ, font chữ, màu sắc ...), bố cục, dàn trang thế nào ...
 
 CSS viết tắt của cụm từ Cascading Style Sheets, về ngữ nghĩa thì có thể hiểu: Cascading là cách làm việc của CSS, các CSS tác dụng vào phần tử HTML có thể bị đè (định nghĩa lại) bởi CSS khác hoặc kết hợp cùng với CSS khác
@@ -29,7 +29,7 @@ Bảo trì dễ dàng: Chỉ cần thay đổi nội dung trong file css và t�
 Được coi là 1 kỹ thuật mã hóa sạch.
 Có thể xem trên trang ngoại tuyến.
 
-Introduction PHP
+## Introduction PHP
 Khái niệm: Thuật ngữ PHP là từ viết tắt của PHP: Hypertext Preprocessor. PHP là một ngôn ngữ kịch bản phía máy chủ được thiết kế đặc biệt để phát triển web.
 Là mã nguồn mở nên dễ dàng để tải xuống và sử dụng miễn phí. Tệp có phần mở rộng là ".php".
 Là ngôn ngữ thông dịch và thực thi phía máy chủ.
@@ -42,3 +42,150 @@ Các đặc điểm:
 Mã nguồn mở.
 Thư viện hỗ trợ mạnh mẽ.
 Kết nối CSDL.
+
+## Điểm nổi bật:
+### 1. JIT (Just-In-Time Compilation)
+Tăng hiệu suất thực thi mã PHP, đặc biệt cho các tác vụ tính toán hoặc xử lý logic phức tạp.
+
+Tuy nhiên, với các ứng dụng web thông thường, hiệu suất tăng không quá rõ rệt.
+### 2. Union Types
+Cho phép khai báo nhiều kiểu dữ liệu cho một biến hoặc tham số:
+
+```php 
+function foo(int|float $number) { ... }
+```
+### 3. Nullsafe Operator (?->)
+Tránh lỗi khi truy cập chuỗi object có thể null:
+```php
+$country = $user?->address?->country;
+```
+### 4. Named Arguments
+Truyền tham số theo tên thay vì theo thứ tự:
+```php
+function foo($a, $b, $c) { ... }
+
+foo(a: 1, c: 3, b: 2);
+
+```
+### 5. Match Expression
+Giống switch, nhưng ngắn gọn hơn, hỗ trợ trả giá trị:
+```php
+$result = match($status) {
+    1 => 'Active',
+    2 => 'Inactive',
+    default => 'Unknown',
+};
+```
+### 6. Throw là một biểu thức
+Giờ đây có thể dùng throw trong biểu thức (như toán tử ternary):
+
+php
+Sao chép
+Chỉnh sửa
+
+```php
+$val = $input ?? throw new InvalidArgumentException();
+```
+### 7. Constructor Property Promotion
+Giảm boilerplate trong class khi khai báo thuộc tính:
+```php
+class User {
+    public function __construct(
+        public string $name,
+        public int $age,
+    ) {}
+}
+```
+### 8. Static Return Type và Mixed Type
+static có thể dùng làm kiểu trả về, và mixed dùng cho bất kỳ kiểu nào.
+
+# PHP
+## Basic PHP Syntax
+Tập lệnh PHP có thể đặt ở bất kỳ đâu trong tài liệu.
+Nó bắt đầu và kết thúc bằng cặp <?php ?>. Các câu lệnh PHP kết thúc bằng dấu " ; "
+Phần mở rộng cho tệp mặc định là ".php"
+```php
+<?php
+    echo "Hello World !";
+?>
+```
+Trong PHP, các từ khóa, các lớp, hàm và các hàm do người dùng tự định nghĩa không phân biệt chữ hoa và chữ thường.
+Tất cả các biến đều phân biệt chữ hoa và chữ thường.
+## PHP Data Types
+### String
+String là một chuỗi các ký tự, có thể là bất kỳ văn bản nào bên trong dấu nháy kép hoặc nháy đơn.
+```php
+<?php
+    $string = "this isString";
+    echo $string;
+    // biến string có kiểu dữ liệu là string với giá trị là "this is String"
+?>
+```
+### Integer
+Kiểu số nguyên là một số không thập phân có dải giá trị từ -2,147,483,648 đến 2,147,483,647.
+Một số quy tắc với kiểu số nguyên:
+Có ít nhất 1 số.
+Không được có dấu thập phân.
+Có thể là số dương hoặc số âm.
+```php
+<?php
+    $int = 1234;
+    // biến int được khai báo kiểu dữ liệu số nguyên với giá trị là 1234
+?>
+```
+### Float
+Số dấu phẩy động là một số có dấu thập phân hoặc một số ở dạng hàm mũ.
+```php
+<?php
+    $float_1 = 1.234;
+    $float_2 = 1/2;
+    // biến float_1 và float_2 được khai báo kiểu dữ liệu float
+?>
+```
+### Boolean
+Kiểu dữ liệu Boolean đại diện cho 2 trạng thái TRUE hoặc FALSE.
+```php
+<?php
+    // có thể khai báo kiểu Boolean như sau 
+    $x = true;
+    $y = false;
+?>
+```
+### Array
+Mảng có thể lưu trữ nhiều giá trị trong 1 biến duy nhất.
+```php
+<?php
+    $arr = array("Pham", "Huy", "Hung");
+    // biến arr có kiểu dữ liệu dạng mảng với 3 giá trị
+?>
+```
+### Object
+Class và Object là khía cạnh thuộc về lập trình hướng đối tượng.
+Class là khuôn mẫu cho các Object và một Object là thể hiện của một Class.
+Các Object kế thừa tất cả thuộc tính và hành vi của Class nhưng mang những giá trị khác nhau.
+```php
+<?php
+    // khai báo class Person
+    class Person{
+        // khai báo 2 thuộc tính của class là name và age
+        public $name;
+        public $age;
+
+        // khai báo hàm khởi tạo của class
+        public function __construct($name, $age)
+        {
+            $this->name = $name;
+            $this->age = $age;
+        }
+
+        // khai báo phương thức cho class
+        public  function getInfo(){
+            return $this->name." ".$this->age;
+        }
+    }
+
+    // khởi tạo object person_1 
+    $person_1 = new Person("Hung", 22);
+    echo $person_1->getInfo();
+?>
+```
