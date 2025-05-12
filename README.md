@@ -112,6 +112,102 @@ Phần mở rộng cho tệp mặc định là ".php"
 ```
 Trong PHP, các từ khóa, các lớp, hàm và các hàm do người dùng tự định nghĩa không phân biệt chữ hoa và chữ thường.
 Tất cả các biến đều phân biệt chữ hoa và chữ thường.
+
+## PHP Variables, Constants and Array
+### PHP Variables (Biến)
+Trong PHP, 1 biến bắt đầu bằng dấu $, theo sau là tên của biến.
+
+Quy tắc cho các biến trong PHP:
+
+Một biến bắt đầu bằng dấu $, theo sau là tên của biến.
+
+Tên biến phải bắt đầu bằng một chữ cái hoặc ký tự gạch dưới.
+
+Tên biến không thể bắt đầu bằng số.
+
+Tên biến chỉ có thể chứa các ký tự chữ-số và dấu gạch dưới (Az, 0-9 và _).
+
+Tên biến có phân biệt chữ hoa chữ thường.
+
+### PHP Constants (Hằng)
+
+Hằng số là một định danh cho 1 simple value và không thể thay đổi giá trị trong tập lệnh và là toàn cục.
+
+Tên hằng hợp lệ bắt đầu bằng 1 chữ cái hoặc dấu gạch dưới (không có $).
+
+Để tạo hằng số, sử dụng hàm define() với cú pháp :
+    define(name, value, case-insensitive);
+    
+    // trong đó name là tên hằng, value là giá trị hằng và case-insensitive để chỉ định phân biệt 
+    
+    // chữ hoa và chữ thường. Mặc định là có (FALSE).
+    
+    // có thể sử dụng để tạo hẳng mảng như sau: 
+    
+    define(arr, [1, 2, 3]);
+    
+### PHP Array (Mảng)
+Mảng
+
+Mảng là một biến đặc biệt, có thể chứa nhiều giá trị cùng 1 lúc.
+
+array() được dùng để tạo 1 mảng trong PHP.
+```php
+<?php
+    $arr = array("Đinh", "Thế", "Anh");
+?>
+```
+Có ba loại mảng:
+Mảng chỉ mục - Mảng được lập chỉ mục số.
+
+Mảng liên kết - Mảng có các khóa được đặt tên.
+
+Mảng nhiều chiều - Mảng chứa 1 hoặc nhiều mảng.
+
+#### Mảng được lập chỉ mục
+
+Có 2 cách để tạo mảng được lập chỉ mục:
+Chỉ mục có thể được chỉ định tự động (luôn bắt đầu từ 0).
+Hoặc chỉ định thủ công:
+```php
+<?php
+    $arr = [];
+    $arr[0] = 1;
+    $arr[1] = 2;        
+?>
+```
+#### Mảng liên kết
+
+Mảng liên kết là mảng sử dụng các khóa do người dùng đặt tên cho chúng.
+
+Có 2 cách tạo tương tự như mảng được lập chỉ mục:
+```php
+<?php
+    // cách 1
+    $arr = array("name" => "The Anh", "age" => 20);
+    
+    // cách 2
+    $arr = [];
+    $arr[name] = "The Anh";
+    $arr[age] = 20;
+?>
+```
+#### Mảng đa chiều
+
+Mảng đa chiều là mảng mà bên trong đó chứa 1 hay nhiều mảng khác.
+Ví dụ ta có 1 mảng 2 chiều như sau:
+```php
+<?php
+    $person = array(
+        array("Nguyen Van A", 20),
+        array("Nguyen A", 19),
+        array("Tran B", 23),
+    );
+    // để truy cập ta dùng $person[][]
+?>
+```
+
+
 ## PHP Data Types
 ### String
 String là một chuỗi các ký tự, có thể là bất kỳ văn bản nào bên trong dấu nháy kép hoặc nháy đơn.
