@@ -286,3 +286,477 @@ Các Object kế thừa tất cả thuộc tính và hành vi của Class nhưng
     echo $person_1->getInfo();
 ?>
 ```
+
+### PHP Operators (Toán tử)
+Toán tử được sử dụng để thực hiện các hoạt động dựa trên các biến và giá trị.
+Toán tử trong PHP được chia thành các nhóm :
+
+Toán tử số học:
+
+![img.png](img/toantusohoc.png)
+
+Toán tử chuyển nhượng:
+
+![img.png](img/toantuchuyennhuong.png)
+
+Toán tử so sánh:
+
+![img.png](img/toantusosanh.png)
+
+Toán tử tăng giảm:
+
+![img.png](img/toantutanggiam.png)
+
+Toán tử logic:
+![img.png](img/toantulogic.png)
+
+Toán tử chuỗi:
+
+![img.png](img/toantuchuoi.png)
+
+Toán tử mảng:
+
+![img.png](img/toantumang.png)
+
+Toán tử phân công có điều kiện:
+
+![img.png](img/toantuphancongcodieukien.png)
+
+## Control Structures
+
+### if-else statement (Câu lệnh điều kiện)
+
+#### if...else
+
+Thực thi mã với 1 điều kiện đúng và 1 điều kiện sai
+
+```php
+<?php
+    // cú pháp 
+    if (condition) {
+        code to be executed if condition is true;
+    } else {
+        code to be executed if condition is false;
+    }
+?>
+```
+
+#### if...elseif...else
+
+Thực thi mã với nhiều hơn 2 điều kiện
+
+```php
+<?php
+    // cú pháp
+    if (condition) {
+        code to be executed if this condition is true;
+    } elseif (condition) {
+        code to be executed if first condition is false and this condition is true;
+    } else {
+        code to be executed if all conditions are false;
+    }
+?>
+```
+
+### switch...case
+
+Thực thi chọn một trong nhiều mã
+
+```php
+<?php
+    $favcolor = "red";
+    
+    switch ($favcolor) {
+      case "red":
+        echo "Your favorite color is red!";
+        break;
+      case "blue":
+        echo "Your favorite color is blue!";
+        break;
+      case "green":
+        echo "Your favorite color is green!";
+        break;
+      default:
+        echo "Your favorite color is neither red, blue, nor green!";
+    }
+?>
+```
+
+### PHP Loops (Vòng lặp)
+Trong PHP ta có các loại vòng lặp sau:
+
+while
+
+do...while
+
+for
+
+foreach
+
+#### While Loop
+
+Thực thi khối mã miễn là điều kiện đúng:
+```php
+<?php
+    // cú pháp
+    while (condition is true) {
+      code to be executed;
+    }
+?>
+```
+
+#### Do...While Loop
+Luôn luôn thực thi khối mã 1 lần, sau đó kiểm tra điều kiện và lặp nếu điều kiện đúng
+```php
+<?php
+    // cú pháp
+    do {
+      code to be executed;
+    } while (condition is true);
+?>
+```
+#### For Loop
+Vòng lặp thực thi khối mã với số lần xác định
+```php
+<?php
+    // cú pháp
+    for (init counter; test counter; increment counter) {
+        code to be executed for each iteration;
+    }
+    // ví dụ 
+    for ($x = 0; $x <= 10; $x++) {
+        echo $x."<br>";
+    }
+?>
+```
+
+#### Foreach Loop
+Vòng lặp chỉ hoạt động trong mảng (array) và lặp qua từng key/value trong mảng.
+
+```php
+<?php
+    // cú pháp
+    foreach ($array as $value) {
+        code to be executed;
+    }
+    // ví dụ 
+    $arr = [1, 2, 3];
+    foreach ($arr as $item){
+        echo $item."<br>";
+    }
+?>
+```
+### String Functions
+12 function xử lý chuỗi được coi là sử dụng phổ biến nhất hiện nay.
+#### strlen($string) - Lấy độ dài chuỗi
+```php
+<?php
+    $str = "Dinh The Anh";
+    echo strlen($str);
+    // 13
+?>
+```
+#### str_word_count($string) - Đếm số từ
+
+```php
+<?php
+    $str = "Dinh The Anh";
+    echo str_word_count($str);
+    // 3
+?>
+```
+#### strrev($string) - Đảo ngược chuỗi
+
+```php
+<?php
+    $str = "Dinh The Anh;
+    echo strrev($str);
+    // hnA ehT hinD
+?>
+```
+
+#### strpos($str, $text) - Tìm đoạn $text trong chuỗi
+
+```php
+<?php
+    $str = "Dinh The Anh";
+    echo strpos($str, "Anh");
+    // 9
+?>
+```
+
+#### str_replace($find, $replace, $string) - Thay thế đoạn văn bản trong chuỗi
+```php
+<?php
+    $str = "Dinh The Anh";
+    $str_new = str_replace("Anh", "Anh-deptrai", $str);
+    echo $str_new;
+    // Dinh The Anh-deptrai
+?>
+```
+#### ucwords($string) - Chuyển chữ cái đầu tiên của mỗi từ thành in hoa
+```php
+$string = "xin chào các bạn";
+$result = ucwords($string);
+echo $result; // Kết quả: "Xin Chào Các Bạn"
+
+```
+
+#### strtoupper($string) - Chuyển toàn bộ chuỗi thành chữ in hoa
+```php
+$string = "hello world";
+$result = strtoupper($string);
+echo $result; // Kết quả: "HELLO WORLD"
+
+```
+#### strtolower($string) - Chuyển toàn bộ chuỗi thành chữ in thường
+```php
+$string = "PHP Là Ngôn Ngữ Mạnh Mẽ";
+$result = strtolower($string);
+echo $result; // Kết quả: "php là ngôn ngữ mạnh mẽ"
+```
+#### str_repeat($string, $repeat) - Lặp lại chuỗi
+```php
+<?php
+    $str = "Dinh The Anh";
+    echo  str_repeat($str, 10);
+    // Dinh The AnhDinh The Anh
+?>
+```
+
+#### array_keys($array) - Trả về 1 mảng tuần tự các key của mảng
+```php
+$array = [
+    "ten" => "An",
+    "tuoi" => 20,
+    "lop" => "PHP"
+];
+
+$result = array_keys($array);
+print_r($result);
+/*
+Kết quả:
+Array
+(
+    [0] => ten
+    [1] => tuoi
+    [2] => lop
+)
+*/
+```
+#### array_pop($array) - Trả về phần tử cuối cùng của mảng
+```php
+$array = ["Táo", "Chuối", "Cam"];
+$last = array_pop($array);
+
+echo $last; // Kết quả: Cam
+print_r($array);
+/*
+Kết quả:
+Array
+(
+    [0] => Táo
+    [1] => Chuối
+)
+*/
+
+```
+#### array_push($array,$var,$var…) - Thêm 1 hoặc nhiều phần tử vào cuối cùng của mảng
+```php
+$array = ["A", "B"];
+array_push($array, "C", "D");
+
+print_r($array);
+/*
+Kết quả:
+Array
+(
+    [0] => A
+    [1] => B
+    [2] => C
+    [3] => D
+)
+*/
+
+```
+#### array_unshift($array, $var, $var…) - Thêm 1 hoặc nhiều phần tử vào đầu tiên của mảng
+```php
+$array = ["B", "C"];
+array_unshift($array, "A");
+
+print_r($array);
+/*
+Kết quả:
+Array
+(
+    [0] => A
+    [1] => B
+    [2] => C
+)
+*/
+
+```
+#### sort($array) - Sắp xếp mảng theo chiều tăng dần (giá trị, không giữ key)
+```php
+$array = [4, 2, 8, 1];
+sort($array);
+
+print_r($array);
+/*
+Kết quả:
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 8
+)
+*/
+
+```
+
+#### array_reverse($array) - Đảo ngược mảng
+```php
+$array = [1, 2, 3, 4];
+$result = array_reverse($array);
+
+print_r($result);
+/*
+Kết quả:
+Array
+(
+    [0] => 4
+    [1] => 3
+    [2] => 2
+    [3] => 1
+)
+*/
+
+```
+#### array_merger($array,$array…) - Gộp 2 hoặc nhiều mảng thành 1 mảng
+```php
+$array1 = ["a" => "Apple", "b" => "Banana"];
+$array2 = ["c" => "Cherry"];
+$result = array_merge($array1, $array2);
+
+print_r($result);
+/*
+Kết quả:
+Array
+(
+    [a] => Apple
+    [b] => Banana
+    [c] => Cherry
+)
+*/
+
+```
+#### array_search($keyword,$array) - Tìm kiếm giá trị của mảng và trả về nếu có
+```php
+
+$array = ["red", "green", "blue"];
+$index = array_search("green", $array);
+
+echo $index; // Kết quả: 1
+```
+#### array_slice($array,$begin,$lenght) - Lấy ra phần tử theo vị trí bắt đầu và số lượng
+```php
+$array = ["a", "b", "c", "d", "e"];
+$result = array_slice($array, 1, 3);
+
+print_r($result);
+/*
+Kết quả:
+Array
+(
+    [0] => b
+    [1] => c
+    [2] => d
+)
+*/
+
+```
+#### array_unique($array) - Loại bỏ phần tử trùng nhau trong mảng
+```php
+$array = [1, 2, 2, 3, 4, 4];
+$result = array_unique($array);
+
+print_r($result);
+/*
+Kết quả:
+Array
+(
+    [0] => 1
+    [1] => 2
+    [3] => 3
+    [4] => 4
+)
+*/
+
+```
+#### array_key_exists($key,$array) - Kiểm tra $key có tồn tại trong mảng không
+```php
+$array = ["name" => "An", "age" => 21];
+if (array_key_exists("name", $array)) {
+    echo "Key 'name' tồn tại!";
+}
+// Kết quả: Key 'name' tồn tại!
+
+```
+#### in_array($value,$array) - Kiểm tra $value có tồn tại trong mảng không
+```php
+$array = ["red", "green", "blue"];
+if (in_array("green", $array)) {
+    echo "Có màu xanh!";
+}
+// Kết quả: Có màu xanh!
+
+```
+#### is_array($array) - Kiểm tra xem có phải mảng hay không
+```php
+$data = ["a", "b", "c"];
+if (is_array($data)) {
+    echo "Đây là mảng.";
+}
+// Kết quả: Đây là mảng.
+
+```
+
+### File Handling (Thao tác với file)
+#### fopen()
+Hàm fopen() được dùng để mở 1 tệp với 2 tham số, tham số thứ nhất chứa tên tệp và tham số thứ 2 cho biết chế độ mà tệp cần được mở:
+```php
+<?php
+    $file = fopen("file_name.txt", "w");
+?> 
+```
+“W” - Mở tệp chỉ để ghi. Nếu tệp không tồn tại thì tệp mới được tạo và nếu tệp đã tồn tại thì nội dung của tệp sẽ bị xóa.
+
+“R” - Tệp chỉ được mở để đọc.
+
+“A” - Tệp chỉ được mở để ghi. Con trỏ tệp trỏ đến cuối tệp. Dữ liệu hiện có trong tệp được giữ nguyên.
+
+“W +” - Mở tệp để đọc và ghi. Nếu tệp không tồn tại thì tệp mới được tạo và nếu tệp đã tồn tại thì nội dung của tệp sẽ bị xóa.
+
+“R +” - Tệp được mở để đọc / ghi.
+
+“A +” - Tệp được mở để ghi / đọc. Con trỏ tệp trỏ đến cuối tệp. Dữ liệu hiện có trong tệp được giữ nguyên. Nếu tệp không có ở đó thì tệp mới sẽ được tạo.
+
+“X” - Tệp mới chỉ được tạo để ghi.
+
+#### fread()
+Hàm fread() được sử dụng để đọc 1 file đang mở, tham số thứ nhất là tên file cần đọc và tham số thứ 2 chỉ định số byte tối đa cần đọc.
+Nếu muốn đọc toàn bộ file ta có thể chỉ định tham số thứ 2 bằng kích thước của file (filesize())
+
+#### fwrite()
+Hàm fwrite() có thể tạo mới hoặc nối văn bản vào tệp đang mở. Đối số truyền vào là tên file, đoạn văn bản cần thêm và có thể thêm đối số thứ 3 là độ dài văn bản được ghi chỉ định.
+```php
+<?php
+    $file = fopen("file_name.txt", 'w');
+    $text = "Hello world\n";
+    fwrite($file, $text);
+?> 
+```
+#### fclose()
+Hàm fclose() dùng để đóng tệp. Đối số truyền vào là tên tệp.
+Cần đóng tất cả các file sau khi làm việc để tránh 1 file đang mở chạy trên máy chủ và chiếm tài nguyên.
