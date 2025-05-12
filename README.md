@@ -252,7 +252,7 @@ Kiểu dữ liệu Boolean đại diện cho 2 trạng thái TRUE hoặc FALSE.
 Mảng có thể lưu trữ nhiều giá trị trong 1 biến duy nhất.
 ```php
 <?php
-    $arr = array("Pham", "Huy", "Hung");
+    $arr = array("Dinh", "The", "Anh");
     // biến arr có kiểu dữ liệu dạng mảng với 3 giá trị
 ?>
 ```
